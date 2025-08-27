@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App — Pro Edition</title>
+  <!-- Chart.js for the hourly chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cloudy">
+  <div class="hero-bg" id="heroBg"></div>
+
+  <div class="topbar">
+    <div class="brand"><span class="logo">🌤️</span> <span>Weather App — Pro</span></div>
+    <div class="toggle" title="Light/Dark">
+      <div class="switch" id="themeSwitch"><div class="knob"></div></div>
+    </div>
+    <button class="btn secondary" id="infoBtn" style="margin-left:auto">ℹ️ Info</button>
+  </div>
+
+  <div class="container">
+    <!-- Left column -->
+    <section class="card">
+      <div class="controls">
+        <input id="q" placeholder="Search city, zip/postal code, or landmark..." />
+        <button class="btn" id="searchBtn">Search</button>
+        <button class="btn secondary" id="geoBtn">📍 Current</button>
+      </div>
+      <div style="margin-top:10px">
+        <div class="recent" id="recent"></div>
+      </div>
+      <hr style="border-color:rgba(255,255,255,.25); margin:14px 0">
+      <div class="current" id="current">
+        <p class="meta">Search for a location to see weather.</p>
+      </div>
+    </section>
+
+    <!-- Right column -->
+    <section class="card">
+      <h3 style="margin:4px 0 12px">Next 12 Hours (3-hour steps)</h3>
+      <canvas id="hourlyChart" height="220"></canvas>
+      <h3 style="margin:18px 0 12px">5-Day Forecast</h3>
+      <div class="forecast" id="forecast"></div>
+      <div class="footer">
+        <span id="credit">Built by <strong>Janasruthi N</strong></span>
+        <span id="updated"></span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Info Modal -->
+  <div class="modal" id="infoModal">
+    <div class="card sheet">
+      <h2>About</h2>
+      <p>This demo fulfills Tech Assessment 1: real-time weather, geolocation, forecast, icons, and an upgraded UI/UX (glassmorphism, dynamic backgrounds, hourly chart, recent searches).</n></p>
+      <p>PM Accelerator info: See the <a href="https://www.linkedin.com/company/product-manager-accelerator/" target="_blank">Product Manager Accelerator</a> LinkedIn page.</p>
+      <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px">
+        <button class="btn secondary" id="closeInfo">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>
